@@ -1,4 +1,4 @@
-DEBUG=True
+DEBUG=False
 SECRET_KEY = 'Tarakan25'
-SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:Tarakan25@localhost/calculator_db'
+SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
 SQLALCHEMY_TRACK_MODIFICATIONS = False

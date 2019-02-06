@@ -1,3 +1,4 @@
+import os
 DEBUG=False
 SECRET_KEY = 'Tarakan25'
 SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']

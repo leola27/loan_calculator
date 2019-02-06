@@ -1,0 +1,55 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+      <h1 align="center" style="color:DeepSkyBlue">  Your history of applications</h1>
+      <div class="table-header-class" align="center" style="overflow-x:auto;">
+      <table border="1|0" style="width:80%">
+      <tr align="center">
+            <th style="text-align:center;background-color:LightSkyBlue">Loan Result</th>
+            <th style="text-align:center;background-color:LightSkyBlue">User Number</th>
+            <th style="text-align:center;background-color:LightSkyBlue">Married?</th>
+            <th style="text-align:center;background-color:LightSkyBlue">Gender</th>
+            <th style="text-align:center;background-color:LightSkyBlue">Has dependents and how many</th>
+            <th style="text-align:center;background-color:LightSkyBlue">Education</th>
+            <th style="text-align:center;background-color:LightSkyBlue">Self-Employed?</th>
+            <th style="text-align:center;background-color:LightSkyBlue">Main Applicant Income</th>
+            <th style="text-align:center;background-color:LightSkyBlue">Coapplicant Income</th>
+            <th style="text-align:center;background-color:LightSkyBlue">Loan Amount</th>
+            <th style="text-align:center;background-color:LightSkyBlue">Loan Term</th>
+            <th style="text-align:center;background-color:LightSkyBlue">Credit History</th>
+            <th style="text-align:center;background-color:LightSkyBlue">Property Area </th>
+            <th style="text-align:center;background-color:LightSkyBlue"> Date Submitted</th>
+      </tr>
+      </div>
+      <div class ="table-content-class" >
+       {% for record in history %}
+        <tr align="center">
+              {% if record.loan_result=="Y"%}
+              <td style="background-color:Lime">{{record.loan_result}}</td>
+              {%else%}
+              <td style="background-color:Red">{{record.loan_result}}</td>
+              {%endif%}
+              <td>{{record.user_id}}</td>
+              <td>{{record.married}}</td>
+              <td>{{record.gender}}</td>
+              <td>{{record.dependents}}</td>
+              <td>{{record.education}}</td>
+              <td>{{record.self_employed}}</td>
+              <td>{{record.applicant_income}}</td>
+              <td>{{record.coapplicant_income}}</td>
+              <td>{{record.loan_amount}}</td>
+              <td>{{record.loan_term_days}}</td>
+              <td>{{record.credit_history}}</td>
+              <td>{{record.property_area}}</td>
+              <td>{{record.date}}</td>
+
+      </tr>
+      {% endfor %}
+      </table>
+      </div>
+
+
+
+      {% endblock %}
+
+

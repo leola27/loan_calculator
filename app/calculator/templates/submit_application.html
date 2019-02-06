@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+       <h4 style="margin-left: 45px" align="left">Please fill out the fields below</h4>
+       <hr>
+       {{form.hidden_tag()}}
+       {{wtf.quick_form(form)}}
+
+
+{% endblock %}

@@ -10,3 +10,5 @@ with flask_app.app_context():
             User.create_user(user='harry', email='harry@hogwarts.com', password='secret')
     except exc.IntegrityError:
         flask_app.run()
+    except  exc.NoSuchModuleError:
+        flask_app.run()
